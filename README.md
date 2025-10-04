@@ -428,14 +428,6 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-## 📞 Support
-
-- **Issues:** [GitHub Issues](https://github.com/YOUR_USERNAME/telegram-remarkable-bot/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/YOUR_USERNAME/telegram-remarkable-bot/discussions)
-- **Community:** [r/RemarkableTablet](https://www.reddit.com/r/RemarkableTablet/)
-
----
-
 ## 🗺️ Roadmap
 
 **v1.0 (Current)**

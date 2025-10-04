@@ -4,6 +4,8 @@
 
 Send any article URL via Telegram and have it automatically converted to EPUB and delivered to your reMarkable tablet in ~30 seconds. No manual downloads, no cable connections, no hassle.
 
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-☕-yellow.svg?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white)](https://buymeacoffee.com/kairon)
+
 ## ✨ Features
 
 - 📱 **Mobile-first workflow** - Share articles directly from your phone

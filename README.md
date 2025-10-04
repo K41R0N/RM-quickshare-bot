@@ -162,7 +162,7 @@ sudo systemctl status telegram-remarkable-bot
 Just send any article URL to your bot:
 
 ```
-https://example.substack.com/p/article-title
+https://k41r0n.substack.com/p/why-im-building-things-that-dont
 ```
 
 The bot will:
@@ -256,21 +256,6 @@ curl -fsSL https://raw.githubusercontent.com/YOUR_USERNAME/telegram-remarkable-b
 **Limitations:**
 - Only available in US regions (us-east1, us-central1, us-west1)
 - Latency from Europe ~100-150ms (negligible for this use case)
-
----
-
-## 📊 Resource Usage
-
-**Typical usage (50 articles/month):**
-
-| Resource | Usage | Free Tier Limit | Headroom |
-|----------|-------|-----------------|----------|
-| Memory | ~50 MB | 1024 MB | 95% free |
-| Bandwidth | ~100 MB/month | 1024 MB/month | 90% free |
-| CPU | <1% | 100% | 99% free |
-| Storage | ~3 GB | 30 GB | 90% free |
-
-**You'll use less than 10% of the free tier resources!**
 
 ---
 

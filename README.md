@@ -463,5 +463,3 @@ MIT License - see [LICENSE](LICENSE) file for details.
 **Made with ❤️ for the reMarkable community**
 
 **Star ⭐ this repo if you find it useful!**
-#   R M - q u i c k s h a r e - b o t  
- 

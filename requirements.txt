@@ -1,0 +1,6 @@
+python-telegram-bot==20.7
+trafilatura==1.6.3
+ebooklib==0.18
+requests==2.31.0
+lxml==4.9.3
+lxml_html_clean==0.1.1

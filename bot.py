@@ -9,6 +9,7 @@ import sys
 import logging
 import subprocess
 import tempfile
+import re
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -29,6 +30,35 @@ logging.basicConfig(
     level=logging.INFO
 )
 logger = logging.getLogger(__name__)
+
+
+def sanitize_filename(title: str, max_length: int = 100) -> str:
+    """
+    Sanitize article title to create a valid filename
+    
+    Args:
+        title: Article title to sanitize
+        max_length: Maximum length for filename (default: 100)
+        
+    Returns:
+        Sanitized filename-safe string
+    """
+    # Remove or replace invalid filename characters
+    # Replace spaces and special chars with hyphens
+    sanitized = re.sub(r'[<>:"/\\|?*]', '', title)
+    sanitized = re.sub(r'[^\w\s-]', '', sanitized)
+    sanitized = re.sub(r'[\s]+', '-', sanitized)
+    sanitized = sanitized.strip('-')
+    
+    # Limit length
+    if len(sanitized) > max_length:
+        sanitized = sanitized[:max_length].rstrip('-')
+    
+    # Ensure it's not empty
+    if not sanitized:
+        sanitized = "Article"
+    
+    return sanitized
 
 
 def extract_article(url: str) -> dict:
@@ -278,9 +308,13 @@ async def handle_url(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # Create EPUB
         await processing_msg.edit_text("📝 Converting to EPUB...")
         
-        # Create temporary file
-        with tempfile.NamedTemporaryFile(suffix='.epub', delete=False) as tmp_file:
-            epub_path = tmp_file.name
+        # Create filename from article title
+        sanitized_title = sanitize_filename(article['title'])
+        epub_filename = f"{sanitized_title}.epub"
+        
+        # Create temporary file with article title as filename
+        temp_dir = tempfile.gettempdir()
+        epub_path = os.path.join(temp_dir, epub_filename)
         
         create_epub(article, epub_path)
         
